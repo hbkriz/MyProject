@@ -1,12 +1,12 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
+using MyProjectApi.Models;
 
-namespace MyProjectApi.Models
+namespace MyProjectApi.DAL
 {
-    public class MyProjectContext : DbContext
+    public class Context : DbContext
     {
-        public MyProjectContext() : base("DatabaseContext")
+        public Context() : base("DatabaseContext")
         {
         }
 

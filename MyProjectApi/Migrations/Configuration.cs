@@ -1,16 +1,17 @@
 ﻿using System.Data.Entity.Migrations;
+using MyProjectApi.DAL;
 using MyProjectApi.Models;
 
 namespace MyProjectApi.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<MyProjectContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
         
-        protected override void Seed(MyProjectContext context)
+        protected override void Seed(Context context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -22,7 +23,6 @@ namespace MyProjectApi.Migrations
               new Blog { Name = "Andrew Peters" },
               new Blog { Name = "Brice Lambson" }
             );
-            //
         }
     }
 }
