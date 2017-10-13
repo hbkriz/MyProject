@@ -40,16 +40,12 @@ namespace MyProjectApi
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterTypes(
-                AllClasses.FromLoadedAssemblies(),
-                WithMappings.FromMatchingInterface,
-                WithName.Default,
-                WithLifetime.Transient);
+            container.RegisterTypes(AllClasses.FromLoadedAssemblies(), WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
 
-            container.RegisterType<BlogController>();
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<DbContext, Context>(new HierarchicalLifetimeManager());
-            container.RegisterType(typeof(IService<>), typeof(Service<>), new TransientLifetimeManager());
+            //container.RegisterType<BlogController>();
+            //container.RegisterType<IUnitOfWork, UnitOfWork>();
+            //container.RegisterType<DbContext, Context>(new HierarchicalLifetimeManager());
+            //container.RegisterType(typeof(IService<>), typeof(Service<>), new TransientLifetimeManager());
         }
     }
 }
