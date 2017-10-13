@@ -24,7 +24,7 @@ namespace MyProjectApi.DAL
                 return (Repository<T>)_repositories[type];
 
             _repositories.Add(type, Activator.CreateInstance(typeof(Repository<>).MakeGenericType(typeof(T)), _context));
-
+            //_repositories.Add(type, new Repository<T>(_context));
             return (Repository<T>)_repositories[type];
         }
 
