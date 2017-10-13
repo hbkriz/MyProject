@@ -75,3 +75,16 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.csprojResolveAssemblyReference.cache
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.pdb
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Swashbuckle.Core.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\WebActivatorEx.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.xml
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.WebApi.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.Practices.Unity.WebApi.xml

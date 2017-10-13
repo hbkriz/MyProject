@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace MyProjectApi.DAL
 {
-    public class Service<T> where T : class
+    public class Service<T> : IService<T> where T : class
     {
         private readonly IUnitOfWork _unitOfWork;
         private IRepository<T> Repository => _unitOfWork.Repository<T>();
