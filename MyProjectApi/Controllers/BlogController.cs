@@ -26,5 +26,20 @@ namespace MyProjectApi.Controllers
                 });
         }
 
+        public BlogViewModel Get(int id)
+        {
+            var blog = _blogService.Get(i => i.BlogId == id);
+
+            return new BlogViewModel
+            {
+                Name = blog.Name
+            };
+        }
+
+        public void Delete(int id)
+        {
+            var blog = _blogService.Get(i => i.BlogId == id);
+            _blogService.Delete(blog);
+        }
     }
 }
