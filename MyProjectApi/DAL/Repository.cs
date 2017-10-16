@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace MyProjectApi.DAL
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IDisposable, IRepository<T> where T : class
     {
         private readonly Context _context;
         private IDbSet<T> Entities => _context.Set<T>();
@@ -52,6 +52,28 @@ namespace MyProjectApi.DAL
             _context.Entry(t).State = EntityState.Modified;
             return t;
         }
+
+        #region Dispose being used for context being called
+        private bool _disposed;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            _disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
 
     }
 }
