@@ -23,6 +23,10 @@ namespace MyProjectApi.DAL
 
         public void Delete(T t)
         {
+            if (_context.Entry(t).State == EntityState.Detached)
+            {
+                Entities.Attach(t);
+            }
             Entities.Remove(t);
         }
 
@@ -44,8 +48,8 @@ namespace MyProjectApi.DAL
 
         public T Update(T t)
         {
-            if (t == null) return null;
             Entities.Attach(t);
+            _context.Entry(t).State = EntityState.Modified;
             return t;
         }
 

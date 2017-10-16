@@ -23,20 +23,24 @@ namespace MyProjectApi.DAL
             return condition == null ? Repository.GetAll() : Repository.GetAll(condition);
         }
 
-        public void Update(T model)
+        public T Update(T model)
         {
-            Repository.Update(model);
+            var updatedModel = Repository.Update(model);
+            _unitOfWork.Save();
+            return updatedModel;
         }
 
         public void Delete(T model)
         {
             Repository.Delete(model);
+            _unitOfWork.Save();
         }
 
         public T Create(T model)
         {
-            return Repository.Add(model);
+            var addedModel = Repository.Add(model);
+            _unitOfWork.Save();
+            return addedModel;
         }
-
     }
 }

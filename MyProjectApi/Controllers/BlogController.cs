@@ -41,5 +41,30 @@ namespace MyProjectApi.Controllers
             var blog = _blogService.Get(i => i.BlogId == id);
             _blogService.Delete(blog);
         }
+
+        public BlogViewModel Put(int id, BlogViewModel viewModel)
+        {
+            var blog = _blogService.Get(i => i.BlogId == id);
+            blog.Name = viewModel.Name;
+
+            var updatedResult = _blogService.Update(blog);
+            return new BlogViewModel
+            {
+                Name = updatedResult.Name
+            };
+        }
+
+        public BlogViewModel Create(BlogViewModel viewModel)
+        {
+            var blog = new Blog
+            {
+                Name = viewModel.Name
+            };
+            var newResult = _blogService.Create(blog);
+            return new BlogViewModel
+            {
+                Name = newResult.Name
+            };
+        }
     }
 }
