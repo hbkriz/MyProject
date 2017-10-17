@@ -1,11 +1,21 @@
-﻿using MyProjectApi.DAL;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MyProjectApi.DAL;
 using MyProjectApi.Models;
 
 namespace MyProjectApi.Services
 {
-    public class BlogService : Service<Blog>
+    public class BlogService : IBlogService
     {
-        public BlogService(IUnitOfWork unitOfWork) : base(unitOfWork){}
-        //TODO: If anything different needs to be done other than CRUD
+        private readonly IUnitOfWork _unitOfWork;
+        public BlogService(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+        public IList<Blog> AllBlogs()
+        {
+            return _unitOfWork.GetAll<Blog>().ToList();
+        }
     }
 }

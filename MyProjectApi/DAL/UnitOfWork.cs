@@ -1,36 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace MyProjectApi.DAL
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly Context _context;
-        private Dictionary<string, object> _repositories;
 
         public UnitOfWork(Context context)
         {
             _context = context;
         }
 
-        public Repository<T> Repository<T>() where T : class
+        public T Get<T>(Expression<Func<T, bool>> match) where T : class
         {
-            if (_repositories == null)
-                _repositories = new Dictionary<string, object>();
+            return _context.Set<T>().SingleOrDefault(match);
+        }
+        
+        public IEnumerable<T> GetAll<T>(Expression<Func<T, bool>> condition = null) where T : class
+        {
+            return condition != null ? _context.Set<T>().Where(condition) : _context.Set<T>();
+        }
 
-            var type = typeof(T).Name;
+        public T Update<T>(T model) where T : class
+        {
+            _context.Set<T>().Attach(model);
+            _context.Entry(model).State = EntityState.Modified; //Tracking
+            return model;
+        }
 
-            if (_repositories.ContainsKey(type))
-                return (Repository<T>)_repositories[type];
+        public void Delete<T>(T model) where T : class
+        {
+            if (_context.Entry(model).State == EntityState.Detached)
+            {
+                _context.Set<T>().Attach(model);
+            }
+            _context.Set<T>().Remove(model);
+        }
 
-            _repositories.Add(type, Activator.CreateInstance(typeof(Repository<>).MakeGenericType(typeof(T)), _context));
-            //_repositories.Add(type, new Repository<T>(_context));
-            return (Repository<T>)_repositories[type];
+        public T Add<T>(T model) where T : class
+        {
+            return _context.Set<T>().Add(model);
         }
 
         public void Save()
         {
-            _context.SaveChanges();
+            using (var transaction = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    _context.SaveChanges();
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                }
+            }
         }
 
         #region Dispose being used for context being called
