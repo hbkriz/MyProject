@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http.Results;
+using AutoMapper;
 using MyProjectApi.DAL;
 using MyProjectApi.Models;
 using MyProjectApi.ViewModels;
@@ -18,22 +18,15 @@ namespace MyProjectApi.Services
 
         public IList<BlogViewModel> GetAll()
         {
-            var models = _unitOfWork.GetAll<Blog>();
-            var viewModels = models.Select(e => new BlogViewModel
-                {
-                    Name = e.Name
-                });
-            return viewModels.ToList();
+            var models = _unitOfWork.GetAll<Blog>().ToList();
+            return Mapper.Map<List<BlogViewModel>>(models);
         }
 
         public BlogViewModel Get(int id)
         {
             var model =_unitOfWork.Get<Blog>(i => i.BlogId == id);
             if (model == null) throw new NullReferenceException("Id not found");
-            return new BlogViewModel
-            {
-                Name = model.Name
-            };
+            return Mapper.Map<BlogViewModel>(model);
         }
 
         public void Delete(int id)
@@ -46,30 +39,20 @@ namespace MyProjectApi.Services
 
         public BlogViewModel Add(BlogViewModel viewModel)
         {
-            var model = new Blog
-            {
-                Name = viewModel.Name
-            };
-            var newResult = _unitOfWork.Add(model);
+            var newResult = _unitOfWork.Add(Mapper.Map<Blog>(viewModel));
             _unitOfWork.Save();
-            return new BlogViewModel
-            {
-                Name = newResult.Name
-            };
+            return Mapper.Map<BlogViewModel>(newResult);
         }
 
         public BlogViewModel Put(int id, BlogViewModel viewModel)
         {
             var model = _unitOfWork.Get<Blog>(i => i.BlogId == id);
             if (model == null) throw new NullReferenceException("Id not found");
-            model.Name = viewModel.Name;
 
-            var updatedResult = _unitOfWork.Update(model);
+            var updatedModel = Mapper.Map(viewModel, model);
+            var updatedResult = _unitOfWork.Update(updatedModel, updatedModel.BlogId);
             _unitOfWork.Save();
-            return new BlogViewModel
-            {
-                Name = updatedResult.Name
-            };
+            return Mapper.Map<BlogViewModel>(updatedResult);
         }
 
     }

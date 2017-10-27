@@ -88,3 +88,5 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.csprojResolveAssemblyReference.cache
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.pdb
+C:\Users\BALAKH\documents\visual studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.dll
+C:\Users\BALAKH\documents\visual studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.xml

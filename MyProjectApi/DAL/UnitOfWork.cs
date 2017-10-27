@@ -25,13 +25,17 @@ namespace MyProjectApi.DAL
             return condition != null ? _context.Set<T>().Where(condition) : _context.Set<T>();
         }
 
-        public T Update<T>(T model) where T : class
+        public T Update<T>(T updated, params object[] keyValues) where T : class
         {
-            _context.Set<T>().Attach(model);
-            _context.Entry(model).State = EntityState.Modified; //Tracking
-            return model;
-        }
+            if (updated == null) return null;
 
+            var existing = _context.Set<T>().Find(keyValues);
+            if (existing == null) return null;
+
+            _context.Entry(existing).CurrentValues.SetValues(updated);
+            return existing;
+        }
+        
         public void Delete<T>(T model) where T : class
         {
             if (_context.Entry(model).State == EntityState.Detached)
