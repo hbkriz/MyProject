@@ -17,7 +17,6 @@ namespace MyProjectApi.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
-            //
             context.Blogs.AddOrUpdate(
               p => p.Name,
               new Blog { Name = "Andrew Peters" },

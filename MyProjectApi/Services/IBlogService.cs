@@ -7,8 +7,8 @@ namespace MyProjectApi.Services
     {
         IList<BlogViewModel> GetAll();
         BlogViewModel Get(int id);
-        void Delete(int id);
-        BlogViewModel Add(BlogViewModel viewModel);
-        BlogViewModel Put(int id, BlogViewModel viewModel);
+        //void Delete(int id);
+        //BlogViewModel Add(BlogViewModel viewModel);
+        //BlogViewModel Put(int id, BlogViewModel viewModel);
     }
 }

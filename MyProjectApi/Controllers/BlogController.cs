@@ -25,19 +25,19 @@ namespace MyProjectApi.Controllers
             return _blogService.Get(id);
         }
 
-        public void Delete(int id)
-        {
-            _blogService.Delete(id);
-        }
+        //public void Delete(int id)
+        //{
+        //    _blogService.Delete(id);
+        //}
 
-        public BlogViewModel Put(int id, BlogViewModel viewModel)
-        {
-            return _blogService.Put(id,viewModel);
-        }
+        //public BlogViewModel Put(int id, BlogViewModel viewModel)
+        //{
+        //    return _blogService.Put(id,viewModel);
+        //}
 
-        public BlogViewModel Create(BlogViewModel viewModel)
-        {
-            return _blogService.Add(viewModel);
-        }
+        //public BlogViewModel Create(BlogViewModel viewModel)
+        //{
+        //    return _blogService.Add(viewModel);
+        //}
     }
 }
