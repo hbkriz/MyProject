@@ -1,12 +1,27 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using MyProject.Wrappers.ConfigurationManagerWrapper;
+using MyProject.Wrappers.HttpClientWrapper;
+using MyProject.Wrappers.MyProjectApi;
 
 namespace MyProject.Controllers
 {
     public class MainController : Controller
     {
-        public ActionResult Index()
+        private readonly IMyProjectApi _projectApi;
+        public MainController() : this(new MyProjectApi(new ConfigurationManagerWrapper(), new HttpClientWrapper())) {
+            
+        }
+
+        public MainController(IMyProjectApi projectApi)
         {
-            return View();
+            _projectApi = projectApi;
+        }
+
+        public async Task<ActionResult> Index()
+        {
+            var response = await _projectApi.GetAllBlogs();
+            return View(response);
         }
 
         public ActionResult About()

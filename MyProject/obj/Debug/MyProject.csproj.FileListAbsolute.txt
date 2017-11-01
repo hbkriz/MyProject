@@ -39,6 +39,7 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Mi
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Newtonsoft.Json.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Net.Http.Formatting.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Helpers.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Mvc.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Optimization.dll
@@ -48,6 +49,7 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Sy
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.WebPages.Razor.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\WebGrease.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Net.Http.Formatting.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Helpers.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Mvc.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProject\bin\System.Web.Optimization.xml

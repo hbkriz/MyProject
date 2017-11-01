@@ -5,6 +5,7 @@ using MyProjectApi.ViewModels;
 
 namespace MyProjectApi.Controllers
 {
+    [RoutePrefix("api/Blog")]
     public class BlogController : ApiController
     {
         private readonly IBlogService _blogService;
@@ -14,6 +15,7 @@ namespace MyProjectApi.Controllers
             _blogService = blogService;
         }
 
+        [Route("GetAll")]
         public IEnumerable<BlogViewModel> GetAll()
         {
             return _blogService.GetAll();

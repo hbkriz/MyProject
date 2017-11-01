@@ -29,6 +29,7 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\MyProjectApi.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\MyProjectApi.pdb
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Antlr3.Runtime.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\EntityFramework.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\EntityFramework.SqlServer.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.AI.Agent.Intercept.dll
@@ -59,6 +60,7 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\System.Web.WebPages.Razor.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\WebActivatorEx.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\WebGrease.dll
+C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\EntityFramework.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\EntityFramework.SqlServer.xml
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -88,5 +90,3 @@ C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\bin
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.csprojResolveAssemblyReference.cache
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.dll
 C:\Users\BALAKH\Documents\Visual Studio 2017\Projects\MyProject\MyProjectApi\obj\Debug\MyProjectApi.pdb
-C:\Users\BALAKH\documents\visual studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.dll
-C:\Users\BALAKH\documents\visual studio 2017\Projects\MyProject\MyProjectApi\bin\AutoMapper.xml

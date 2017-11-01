@@ -17,7 +17,7 @@
     <AssemblyName>MyProjectApi</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -210,6 +210,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Constants\Constants.Api.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -217,6 +218,8 @@
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="DTOs\BlogDto.cs" />
+    <Compile Include="DTOs\PostDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +230,12 @@
     <Compile Include="Services\BlogService.cs" />
     <Compile Include="Services\IBlogService.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
+    <Compile Include="Wrappers\ConfigurationManagerWrapper\ConfigurationManagerWrapper.cs" />
+    <Compile Include="Wrappers\ConfigurationManagerWrapper\IConfigurationManagerWrapper.cs" />
+    <Compile Include="Wrappers\HttpClientWrapper\HttpClientWrapper.cs" />
+    <Compile Include="Wrappers\HttpClientWrapper\IHttpClientWrapper.cs" />
+    <Compile Include="Wrappers\MyProjectApi\IMyProjectApi.cs" />
+    <Compile Include="Wrappers\MyProjectApi\MyProjectApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -316,7 +325,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65258</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65258/</IISUrl>
+          <IISUrl>http://localhost/MyProjectApi</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

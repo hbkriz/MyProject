@@ -52,6 +52,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -141,11 +144,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\Constants.Api.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="DTOs\BlogDto.cs" />
+    <Compile Include="DTOs\PostDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\ConfigurationManagerWrapper\ConfigurationManagerWrapper.cs" />
+    <Compile Include="Wrappers\ConfigurationManagerWrapper\IConfigurationManagerWrapper.cs" />
+    <Compile Include="Wrappers\HttpClientWrapper\HttpClientWrapper.cs" />
+    <Compile Include="Wrappers\HttpClientWrapper\IHttpClientWrapper.cs" />
+    <Compile Include="Wrappers\MyProjectApi\IMyProjectApi.cs" />
+    <Compile Include="Wrappers\MyProjectApi\MyProjectApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
