@@ -21,21 +21,25 @@ namespace MyProjectApi.Controllers
             return _blogService.GetAll();
         }
 
+        [Route("Get")]
         public BlogViewModel Get(int id)
         {
             return _blogService.Get(id);
         }
 
+        [Route("Delete")]
         public void Delete(int id)
         {
             _blogService.Delete(id);
         }
 
+        [Route("Put")]
         public BlogViewModel Put(int id, BlogViewModel viewModel)
         {
             return _blogService.Put(id, viewModel);
         }
 
+        [Route("Create")]
         public BlogViewModel Create(BlogViewModel viewModel)
         {
             return _blogService.Add(viewModel);

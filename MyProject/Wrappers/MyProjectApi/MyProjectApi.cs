@@ -24,5 +24,10 @@ namespace MyProject.Wrappers.MyProjectApi
             return _httpClientWrapper.GetAsync<IEnumerable<BlogDto>>(apiMethod);
         }
 
+        public Task<BlogDto> GetBlog(int id)
+        {
+            var apiMethod = string.Format("Blog/Get?id={0}", id);
+            return _httpClientWrapper.GetAsync<BlogDto>(apiMethod);
+        }
     }
 }
