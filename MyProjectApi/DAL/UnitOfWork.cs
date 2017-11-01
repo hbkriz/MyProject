@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace MyProjectApi.DAL
 {
@@ -21,7 +22,11 @@ namespace MyProjectApi.DAL
         {
             return _context.Set<T>();
         }
-        
+        public DbEntityEntry DbEntityEntry<T>(T entity) where T : class
+        {
+            return _context.Entry(entity);
+        }
+
         #region Dispose being used for context being called
         private bool _disposed;
 

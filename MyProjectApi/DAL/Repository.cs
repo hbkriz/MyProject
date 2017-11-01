@@ -3,54 +3,54 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
 
 namespace MyProjectApi.DAL
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository : IRepository
     {
-        private readonly IDbSet<T> _entities;
+        private readonly IUnitOfWork _unitOfWork;
 
         public Repository(IUnitOfWork unitOfWork)
         {
-            _entities = unitOfWork.Set<T>();
+            _unitOfWork = unitOfWork;
         }
         
-        public T Get(Expression<Func<T, bool>> match)
+        public T Get<T>(Expression<Func<T, bool>> match) where T : class
         {
-            return _entities.SingleOrDefault(match);
+            return _unitOfWork.Set<T>().SingleOrDefault(match);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> condition = null)
+        public IEnumerable<T> GetAll<T>(Expression<Func<T, bool>> condition = null) where T : class
         {
-            return condition != null ? _entities.Where(condition) : _entities;
+            return condition != null ? _unitOfWork.Set<T>().Where(condition) : _unitOfWork.Set<T>();
         }
 
-        //public T Update(T updated, params object[] keyValues)
-        //{
-        //    if (updated == null) return null;
+        public void Save()
+        {
+            _unitOfWork.Save();
+        }
 
-        //    var existing = _entities.Find(keyValues);
-        //    if (existing == null) return null;
+        public T Update<T>(T updated) where T : class
+        {
+            if (updated == null) return null;
+            _unitOfWork.DbEntityEntry(updated).State = EntityState.Modified;
+            return updated;
+        }
 
-        //    _context.Entry(existing).CurrentValues.SetValues(updated);
-        //    return existing;
-        //}
+        public void Delete<T>(Expression<Func<T, bool>> condition) where T : class
+        {
+            var model = _unitOfWork.Set<T>().SingleOrDefault(condition);
+            if (model == null) throw new NullReferenceException(typeof(T) + " model not found");
+            if (_unitOfWork.DbEntityEntry(model).State == EntityState.Detached)
+            {
+                _unitOfWork.Set<T>().Attach(model);
+            }
+            _unitOfWork.Set<T>().Remove(model);
+        }
 
-        //public void Delete(Expression<Func<T, bool>> condition)
-        //{
-        //    var model = _entities.SingleOrDefault(condition);
-        //    if (model == null) throw new NullReferenceException(typeof(T) + " model not found");
-        //    if (_context.Entry(model).State == EntityState.Detached)
-        //    {
-        //        _entities.Attach(model);
-        //    }
-        //    _entities.Remove(model);
-        //}
-
-        //public T Add(T model)
-        //{
-        //    return _entities.Add(model);
-        //}
+        public T Add<T>(T model) where T : class
+        {
+            return _unitOfWork.Set<T>().Add(model);
+        }
     }
 }
