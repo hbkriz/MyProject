@@ -33,7 +33,7 @@ namespace MyProjectApi.Controllers
             _blogService.Delete(id);
         }
 
-        [Route("Put")]
+        [Route("Update")]
         public BlogViewModel Put(int id, BlogViewModel viewModel)
         {
             return _blogService.Put(id, viewModel);

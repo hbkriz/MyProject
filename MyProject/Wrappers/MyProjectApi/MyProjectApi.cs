@@ -29,5 +29,23 @@ namespace MyProject.Wrappers.MyProjectApi
             var apiMethod = string.Format("Blog/Get?id={0}", id);
             return _httpClientWrapper.GetAsync<BlogDto>(apiMethod);
         }
+
+        public Task DeleteBlog(int id)
+        {
+            var apiMethod = string.Format("Blog/Delete?id={0}", id);
+            return _httpClientWrapper.DeleteAsync<BlogDto>(apiMethod);
+        }
+
+        public Task<BlogDto> CreateBlog(BlogDto blog)
+        {
+            var apiMethod = string.Format("Blog/Create");
+            return _httpClientWrapper.PostAsJsonAsync<BlogDto>(apiMethod, blog);
+        }
+
+        public Task<BlogDto> UpdateBlog(int id, BlogDto blog)
+        {
+            var apiMethod = string.Format("Blog/Update?id={0}", id);
+            return _httpClientWrapper.PutAsJsonAsync<BlogDto>(apiMethod, blog);
+        }
     }
 }
