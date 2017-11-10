@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using MyProjectApi.Services;
+using MyProjectApi.Helpers.Interfaces;
 using MyProjectApi.ViewModels;
 
 namespace MyProjectApi.Controllers
@@ -36,7 +36,7 @@ namespace MyProjectApi.Controllers
         [Route("Update")]
         public BlogViewModel Put(int id, BlogViewModel viewModel)
         {
-            return _blogService.Put(id, viewModel);
+            return _blogService.Put(viewModel, id);
         }
 
         [Route("Create")]

@@ -20,6 +20,11 @@ namespace MyProjectApi.DAL
             return _unitOfWork.Set<T>().SingleOrDefault(match);
         }
 
+        public T Find<T>(params object[] keyValues) where T : class
+        {
+            return _unitOfWork.Set<T>().Find(keyValues);
+        }
+
         public IEnumerable<T> GetAll<T>(Expression<Func<T, bool>> condition = null) where T : class
         {
             return condition != null ? _unitOfWork.Set<T>().Where(condition) : _unitOfWork.Set<T>();
@@ -32,20 +37,13 @@ namespace MyProjectApi.DAL
 
         public T Update<T>(T updated) where T : class
         {
-            if (updated == null) return null;
             _unitOfWork.DbEntityEntry(updated).State = EntityState.Modified;
             return updated;
         }
 
-        public void Delete<T>(Expression<Func<T, bool>> condition) where T : class
+        public void Delete<T>(T t) where T : class
         {
-            var model = _unitOfWork.Set<T>().SingleOrDefault(condition);
-            if (model == null) throw new NullReferenceException(typeof(T) + " model not found");
-            if (_unitOfWork.DbEntityEntry(model).State == EntityState.Detached)
-            {
-                _unitOfWork.Set<T>().Attach(model);
-            }
-            _unitOfWork.Set<T>().Remove(model);
+            _unitOfWork.Set<T>().Remove(t);
         }
 
         public T Add<T>(T model) where T : class

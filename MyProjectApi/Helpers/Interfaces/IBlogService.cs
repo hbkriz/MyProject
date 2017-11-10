@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MyProjectApi.ViewModels;
 
-namespace MyProjectApi.Services
+namespace MyProjectApi.Helpers.Interfaces
 {
     public interface IBlogService
     {
@@ -9,6 +9,6 @@ namespace MyProjectApi.Services
         BlogViewModel Get(int id);
         void Delete(int id);
         BlogViewModel Add(BlogViewModel viewModel);
-        BlogViewModel Put(int id, BlogViewModel viewModel);
+        BlogViewModel Put(BlogViewModel viewModel, int id);
     }
 }
