@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using MyProjectApi.DTOs;
 using MyProjectApi.Wrappers.ConfigurationManagerWrapper;
 using MyProjectApi.Wrappers.HttpClientWrapper;
-using MyProjectApi.Constants;
-using MyProjectApi.DTOs;
 
 namespace MyProjectApi.Wrappers.MyProjectApi
 {
@@ -16,8 +15,7 @@ namespace MyProjectApi.Wrappers.MyProjectApi
         public MyProjectApi(IConfigurationManagerWrapper configurationManager, IHttpClientWrapper httpClientWrapper)
         {
             _httpClientWrapper = httpClientWrapper;
-            _httpClientWrapper.Initialize(configurationManager.GetAppSetting(Constants.Constants.MyProjectApiUrlKey),
-                Constants.Constants.MyProjectApiName);
+            _httpClientWrapper.Initialize(configurationManager.GetAppSetting("MyProjectApiUrl"), "My Project Api");
         }
 
         public Task<IEnumerable<BlogDto>> GetAllBlogs()

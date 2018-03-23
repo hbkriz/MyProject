@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using MyProjectApi.Helpers.Interfaces;
-using MyProjectApi.ViewModels;
+using MyProjectBusinessLayer.Helpers.Interfaces;
+using MyProjectBusinessLayer.ViewModels;
 
 namespace MyProjectApi.Controllers
 {

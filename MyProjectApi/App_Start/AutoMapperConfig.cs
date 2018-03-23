@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
-using MyProjectApi.Models;
-using MyProjectApi.ViewModels;
+using MyProjectBusinessLayer.ViewModels;
+using MyProjectDataLayer.Models;
 
-namespace MyProjectApi
+namespace MyProjectBusinessLayer
 {
     public class AutoMapperConfig
     {

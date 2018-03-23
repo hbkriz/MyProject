@@ -1,0 +1,13 @@
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\obj\Debug\MyProjectBusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\obj\Debug\MyProjectBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\MyProjectBusinessLayer.dll
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\MyProjectBusinessLayer.pdb
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\AutoMapper.dll
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\MyProjectDataLayer.dll
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\MyProjectDataLayer.pdb
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\MyProjectDataLayer.dll.config
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\AutoMapper.xml
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\obj\Debug\MyProjectBusinessLayer.dll
+C:\Users\BALAKH\Desktop\MyProject\MyProjectBusinessLayer\obj\Debug\MyProjectBusinessLayer.pdb

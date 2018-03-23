@@ -1,9 +1,5 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using MyProjectApi.Controllers;
-using MyProjectApi.DAL;
-using System.Data.Entity;
 
 namespace MyProjectApi
 {

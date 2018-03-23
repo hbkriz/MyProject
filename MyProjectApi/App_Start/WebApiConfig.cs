@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Swashbuckle.Application;
 
 namespace MyProjectApi
 {
@@ -13,12 +14,17 @@ namespace MyProjectApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            
+            // Redirect root to Swagger UI
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                name: "Swagger UI",
+                routeTemplate: "",
+                defaults: null,
+                constraints: null,
+                handler: new RedirectHandler(SwaggerDocsConfig.DefaultRootUrlResolver, "swagger/ui/index"));
+            
+
+
         }
     }
 }
