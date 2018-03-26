@@ -19,7 +19,7 @@ namespace MyProjectOData.Controllers
             _retriever = new BlogRetriever(new Repository(new Context()));
         }
         
-        [EnableQuery(MaxExpansionDepth = 4)]
+        [EnableQuery]
         public IQueryable<Blog> Get()
         {
             return _retriever.GetAllModels(null).AsQueryable();

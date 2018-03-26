@@ -30,6 +30,7 @@ namespace MyProjectOData
             movies.EntityType.Ignore(emp => emp.Director);
             
             builder.EntitySet<Blog>("Blogs");
+
             return builder.GetEdmModel();
         }
         
