@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Http;
 using System.Web.OData;
+using MyProjectBusinessLayer.Services.Retrievers;
+using MyProjectBusinessLayer.Services.Retrievers.Interfaces;
 using MyProjectDataLayer.DAL;
 using MyProjectDataLayer.Models;
 
@@ -8,19 +10,24 @@ namespace MyProjectOData.Controllers
 {
     public class BlogsController : ODataController
     {
-        Context db = new Context();
+        private readonly IBlogRetriever _retriever;
 
+        public BlogsController()
+        {
+            _retriever = new BlogRetriever(new Repository(new Context()));
+        }
+        
         [EnableQuery]
         public IQueryable<Blog> Get()
         {
-            return db.Blogs;
+            return _retriever.GetAllModels(null).AsQueryable();
         }
         
 
         [EnableQuery]
         public SingleResult<Blog> Get([FromODataUri] int key)
         {
-            IQueryable<Blog> result = db.Blogs.Where(p => p.BlogId == key);
+            var result = _retriever.GetAllModels(p => p.BlogId == key).AsQueryable();
             return SingleResult.Create(result);
         }
     }
