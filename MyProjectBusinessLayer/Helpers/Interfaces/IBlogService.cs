@@ -10,7 +10,7 @@ namespace MyProjectBusinessLayer.Helpers.Interfaces
         IList<BlogViewModel> GetAll();
         IQueryable<Blog> GetAllBlogs();
         BlogViewModel Get(int id);
-        Blog GetBlog(int id);
+        IQueryable<Blog> GetBlog(int id);
         void Delete(int id);
         BlogViewModel Add(BlogViewModel viewModel);
         BlogViewModel Put(BlogViewModel viewModel, int id);

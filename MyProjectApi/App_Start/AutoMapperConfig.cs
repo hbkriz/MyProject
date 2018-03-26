@@ -6,7 +6,7 @@ using AutoMapper;
 using MyProjectBusinessLayer.ViewModels;
 using MyProjectDataLayer.Models;
 
-namespace MyProjectBusinessLayer
+namespace MyProjectApi
 {
     public class AutoMapperConfig
     {

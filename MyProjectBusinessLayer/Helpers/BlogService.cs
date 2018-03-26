@@ -40,9 +40,9 @@ namespace MyProjectBusinessLayer.Helpers
             return _blogRetriever.Get(i => i.BlogId == id);
         }
 
-        public Blog GetBlog(int id)
+        public IQueryable<Blog> GetBlog(int id)
         {
-            return _blogRetriever.GetModel(i => i.BlogId == id);
+            return _blogRetriever.GetAllModels(i => i.BlogId == id).AsQueryable();
         }
 
         public void Delete(int id)
