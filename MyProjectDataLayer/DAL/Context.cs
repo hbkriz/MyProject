@@ -50,5 +50,7 @@ namespace MyProjectDataLayer.DAL
 
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<TypeOfPost> TypeOfPosts { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 }

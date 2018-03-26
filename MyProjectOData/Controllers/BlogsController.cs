@@ -8,6 +8,8 @@ using MyProjectDataLayer.Models;
 
 namespace MyProjectOData.Controllers
 {
+    //To expand results in client side ($expand) use Posts($select=Title;$expand=TypeOfPosts($select=Type))
+    //To select results in client side ($select) use Title
     public class BlogsController : ODataController
     {
         private readonly IBlogRetriever _retriever;
@@ -17,7 +19,7 @@ namespace MyProjectOData.Controllers
             _retriever = new BlogRetriever(new Repository(new Context()));
         }
         
-        [EnableQuery]
+        [EnableQuery(MaxExpansionDepth = 4)]
         public IQueryable<Blog> Get()
         {
             return _retriever.GetAllModels(null).AsQueryable();

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using MyProjectDataLayer.DAL;
 using MyProjectDataLayer.Models;
 
