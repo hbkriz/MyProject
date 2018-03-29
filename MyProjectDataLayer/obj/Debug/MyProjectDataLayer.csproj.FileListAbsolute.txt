@@ -1,5 +1,3 @@
-C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csprojResolveAssemblyReference.cache
-C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csproj.CoreCompileInputs.cache
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\MyProjectDataLayer.dll.config
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\MyProjectDataLayer.dll
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\MyProjectDataLayer.pdb
@@ -7,5 +5,7 @@ C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\EntityFramework.d
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\EntityFramework.xml
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csprojResolveAssemblyReference.cache
+C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csproj.CoreCompileInputs.cache
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.dll
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.pdb

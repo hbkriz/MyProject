@@ -1,12 +1,13 @@
 ﻿using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web.Http;
 using System.Web.OData;
-using MyProjectBusinessLayer.Services.Retrievers;
-using MyProjectBusinessLayer.Services.Retrievers.Interfaces;
-using MyProjectDataLayer.DAL;
-using MyProjectDataLayer.Models;
+using MyProjectOData.DAL;
+using MyProjectOData.Models;
+using MyProjectOData.Retrievers;
+using MyProjectOData.Retrievers.ModelRetriever;
 
-namespace MyProjectOData.Controllers
+namespace MyProjectOData.Controllers.Project
 {
     //To expand results in client side ($expand) use Posts($select=Title;$expand=TypeOfPosts($select=Type))
     //To select results in client side ($select) use Title
@@ -16,20 +17,20 @@ namespace MyProjectOData.Controllers
 
         public BlogsController()
         {
-            _retriever = new BlogRetriever(new Repository(new Context()));
+            _retriever = new BlogRetriever(new Repository(new UnitOfWork(new ProjectContext())));
         }
         
         [EnableQuery]
         public IQueryable<Blog> Get()
         {
-            return _retriever.GetAllModels(null).AsQueryable();
+            return _retriever.GetAll(null).AsQueryable();
         }
         
 
         [EnableQuery]
         public SingleResult<Blog> Get([FromODataUri] int key)
         {
-            var result = _retriever.GetAllModels(p => p.BlogId == key).AsQueryable();
+            var result = _retriever.GetAll(p => p.BlogId == key).AsQueryable();
             return SingleResult.Create(result);
         }
     }
