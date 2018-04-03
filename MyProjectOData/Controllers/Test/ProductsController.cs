@@ -7,7 +7,7 @@ using System.Web.Http;
 using System.Web.OData;
 using MyProjectOData.Models;
 
-namespace MyProjectOData.Controllers.Fake
+namespace MyProjectOData.Controllers.Test
 {
     public class ProductsController : ODataController
     {

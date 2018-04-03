@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using MyProjectOData.Models;
 
-namespace MyProjectOData.Controllers.Fake
+namespace MyProjectOData.Controllers.Test
 {
     public class DataService
     {
