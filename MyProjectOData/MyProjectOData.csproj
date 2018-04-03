@@ -142,12 +142,16 @@
     <Compile Include="App_Start\ODataConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientInvoicing\ClientInvoicingClientController.cs" />
+    <Compile Include="Controllers\ClientInvoicing\ClientInvoicingContractController.cs" />
+    <Compile Include="Controllers\CVC\CvcStaticInfoController.cs" />
     <Compile Include="Controllers\Test\DataService.cs" />
     <Compile Include="Controllers\Project\BlogsController.cs" />
-    <Compile Include="Controllers\CVC\CvcContractsController.cs" />
+    <Compile Include="Controllers\CVC\CvcContractController.cs" />
     <Compile Include="Controllers\Test\MoviesController.cs" />
     <Compile Include="Controllers\Test\ProductsController.cs" />
-    <Compile Include="DAL\Contexts\CostValueCompContext.cs" />
+    <Compile Include="DAL\Contexts\ClientInvoiceContext.cs" />
+    <Compile Include="DAL\Contexts\CvcContext.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\Contexts\ProjectContext.cs" />
@@ -156,7 +160,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClientInvoicing\Client.cs" />
+    <Compile Include="Models\ClientInvoicing\Contract.cs" />
     <Compile Include="Models\CVC\Contract.cs" />
+    <Compile Include="Models\CVC\StaticInfo.cs" />
     <Compile Include="Models\Test\Movie.cs" />
     <Compile Include="Models\Project\MyProjectModels.cs" />
     <Compile Include="Models\Test\Person.cs" />
@@ -164,6 +171,12 @@
     <Compile Include="Models\Test\StarRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retrievers\BaseRetriever.cs" />
+    <Compile Include="Retrievers\ClientInvoicing\ClientRetriever.cs" />
+    <Compile Include="Retrievers\ClientInvoicing\ContractRetriever.cs" />
+    <Compile Include="Retrievers\ClientInvoicing\IClientRetriever.cs" />
+    <Compile Include="Retrievers\ClientInvoicing\IContractRetriever.cs" />
+    <Compile Include="Retrievers\CVC\IStaticInfoRetriever.cs" />
+    <Compile Include="Retrievers\CVC\StaticInfoRetriever.cs" />
     <Compile Include="Retrievers\IRetriever.cs" />
     <Compile Include="Retrievers\Project\BlogRetriever.cs" />
     <Compile Include="Retrievers\CVC\ContractRetriever.cs" />

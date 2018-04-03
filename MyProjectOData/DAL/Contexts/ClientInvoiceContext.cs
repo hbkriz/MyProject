@@ -1,14 +1,14 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using MyProjectOData.Models.Project;
+using MyProjectOData.Models.ClientInvoicing;
 
 namespace MyProjectOData.DAL.Contexts
 {
-    public class ProjectContext: DbContext
+    public class ClientInvoiceContext : DbContext
     {
-        public ProjectContext() : base("ProjectContext")
+        public ClientInvoiceContext() : base("ClientInvoiceContext")
         {
-            Database.SetInitializer<ProjectContext>(null);
+            Database.SetInitializer<ClientInvoiceContext>(null);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -16,6 +16,7 @@ namespace MyProjectOData.DAL.Contexts
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
     }
 }

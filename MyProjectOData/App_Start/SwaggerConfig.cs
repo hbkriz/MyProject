@@ -17,7 +17,7 @@ namespace MyProjectOData
                     {
                         c.SingleApiVersion("v1", "MyProjectOData");
                         c.CustomProvider(defaultProvider => new ODataSwaggerProvider(defaultProvider, c, GlobalConfiguration.Configuration));
-
+                        c.SchemaId(x => x.FullName);
                     })
                 .EnableSwaggerUi(c =>
                     {

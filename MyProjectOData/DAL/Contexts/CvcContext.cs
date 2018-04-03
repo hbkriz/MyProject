@@ -1,14 +1,14 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using MyProjectOData.Models.Project;
+using MyProjectOData.Models.CVC;
 
 namespace MyProjectOData.DAL.Contexts
 {
-    public class ProjectContext: DbContext
+    public class CvcContext : DbContext
     {
-        public ProjectContext() : base("ProjectContext")
+        public CvcContext() : base("CvcContext")
         {
-            Database.SetInitializer<ProjectContext>(null);
+            Database.SetInitializer<CvcContext>(null);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -16,6 +16,7 @@ namespace MyProjectOData.DAL.Contexts
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<StaticInfo> StaticInfos { get; set; }
     }
 }

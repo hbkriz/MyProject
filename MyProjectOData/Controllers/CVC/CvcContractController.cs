@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
 using System.Web.OData;
 using MyProjectOData.DAL;
 using MyProjectOData.DAL.Contexts;
-using MyProjectOData.Models;
 using MyProjectOData.Models.CVC;
 using MyProjectOData.Retrievers.CVC;
 
 namespace MyProjectOData.Controllers.CVC
 {
-    public class CvcContractsController : ODataController
+    public class CvcContractController : ODataController
     {
         private readonly IContractRetriever _retriever;
 
-        public CvcContractsController()
+        public CvcContractController()
         {
-            _retriever = new ContractRetriever(new Repository(new UnitOfWork<CostValueCompContext>(new CostValueCompContext())));
+            _retriever = new ContractRetriever(new Repository(new UnitOfWork<CvcContext>(new CvcContext())));
         }
 
         [EnableQuery]
