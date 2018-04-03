@@ -1,4 +1,4 @@
-﻿namespace MyProjectOData.Models
+﻿namespace MyProjectOData.Models.Test
 {
     public class Product
     {

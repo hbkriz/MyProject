@@ -3,9 +3,11 @@ using System.Runtime.Remoting.Contexts;
 using System.Web.Http;
 using System.Web.OData;
 using MyProjectOData.DAL;
+using MyProjectOData.DAL.Contexts;
 using MyProjectOData.Models;
+using MyProjectOData.Models.Project;
 using MyProjectOData.Retrievers;
-using MyProjectOData.Retrievers.ModelRetriever;
+using MyProjectOData.Retrievers.Project;
 
 namespace MyProjectOData.Controllers.Project
 {

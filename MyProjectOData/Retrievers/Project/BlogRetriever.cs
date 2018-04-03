@@ -1,7 +1,8 @@
 ﻿using MyProjectOData.DAL;
 using MyProjectOData.Models;
+using MyProjectOData.Models.Project;
 
-namespace MyProjectOData.Retrievers.ModelRetriever
+namespace MyProjectOData.Retrievers.Project
 {
     public class BlogRetriever :BaseRetriever<Blog>, IBlogRetriever
     {

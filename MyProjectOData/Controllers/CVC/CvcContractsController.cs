@@ -6,8 +6,10 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.OData;
 using MyProjectOData.DAL;
+using MyProjectOData.DAL.Contexts;
 using MyProjectOData.Models;
-using MyProjectOData.Retrievers.ModelRetriever;
+using MyProjectOData.Models.CVC;
+using MyProjectOData.Retrievers.CVC;
 
 namespace MyProjectOData.Controllers.CVC
 {

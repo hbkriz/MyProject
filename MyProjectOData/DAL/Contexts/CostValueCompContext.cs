@@ -3,8 +3,9 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using MyProjectOData.Models;
+using MyProjectOData.Models.CVC;
 
-namespace MyProjectOData.DAL
+namespace MyProjectOData.DAL.Contexts
 {
     public class CostValueCompContext : DbContext
     {

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.OData;
 using MyProjectOData.Models;
+using MyProjectOData.Models.Test;
 
 namespace MyProjectOData.Controllers.Test
 {

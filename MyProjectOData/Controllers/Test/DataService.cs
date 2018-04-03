@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MyProjectOData.Models;
+using MyProjectOData.Models.Test;
 
 namespace MyProjectOData.Controllers.Test
 {

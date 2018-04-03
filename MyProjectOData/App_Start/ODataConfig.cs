@@ -5,6 +5,9 @@ using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using Microsoft.OData.Edm;
 using MyProjectOData.Models;
+using MyProjectOData.Models.CVC;
+using MyProjectOData.Models.Project;
+using MyProjectOData.Models.Test;
 
 namespace MyProjectOData
 {

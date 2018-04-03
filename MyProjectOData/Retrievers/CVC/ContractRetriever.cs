@@ -1,7 +1,8 @@
 ﻿using MyProjectOData.DAL;
 using MyProjectOData.Models;
+using MyProjectOData.Models.CVC;
 
-namespace MyProjectOData.Retrievers.ModelRetriever
+namespace MyProjectOData.Retrievers.CVC
 {
     public class ContractRetriever: BaseRetriever<Contract>, IContractRetriever
     {

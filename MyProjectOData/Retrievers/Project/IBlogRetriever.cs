@@ -1,6 +1,7 @@
 ﻿using MyProjectOData.Models;
+using MyProjectOData.Models.Project;
 
-namespace MyProjectOData.Retrievers.ModelRetriever
+namespace MyProjectOData.Retrievers.Project
 {
     public interface IBlogRetriever : IRetriever<Blog>
     {

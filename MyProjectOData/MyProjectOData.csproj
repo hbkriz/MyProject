@@ -149,28 +149,28 @@
     <Compile Include="Controllers\CVC\CvcContractsController.cs" />
     <Compile Include="Controllers\Test\MoviesController.cs" />
     <Compile Include="Controllers\Test\ProductsController.cs" />
-    <Compile Include="DAL\CostValueCompContext.cs" />
+    <Compile Include="DAL\Contexts\CostValueCompContext.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\IUnitOfWork.cs" />
-    <Compile Include="DAL\ProjectContext.cs" />
+    <Compile Include="DAL\Contexts\ProjectContext.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contract.cs" />
-    <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MyProjectModels.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\StarRating.cs" />
+    <Compile Include="Models\CVC\Contract.cs" />
+    <Compile Include="Models\Test\Movie.cs" />
+    <Compile Include="Models\Project\MyProjectModels.cs" />
+    <Compile Include="Models\Test\Person.cs" />
+    <Compile Include="Models\Test\Product.cs" />
+    <Compile Include="Models\Test\StarRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retrievers\BaseRetriever.cs" />
     <Compile Include="Retrievers\IRetriever.cs" />
-    <Compile Include="Retrievers\ModelRetriever\BlogRetriever.cs" />
-    <Compile Include="Retrievers\ModelRetriever\ContractRetriever.cs" />
-    <Compile Include="Retrievers\ModelRetriever\IBlogRetriever.cs" />
-    <Compile Include="Retrievers\ModelRetriever\IContractRetriever.cs" />
+    <Compile Include="Retrievers\Project\BlogRetriever.cs" />
+    <Compile Include="Retrievers\CVC\ContractRetriever.cs" />
+    <Compile Include="Retrievers\Project\IBlogRetriever.cs" />
+    <Compile Include="Retrievers\CVC\IContractRetriever.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

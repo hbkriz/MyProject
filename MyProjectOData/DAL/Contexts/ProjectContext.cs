@@ -2,8 +2,9 @@
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using MyProjectOData.Models;
+using MyProjectOData.Models.Project;
 
-namespace MyProjectOData.DAL
+namespace MyProjectOData.DAL.Contexts
 {
     public class ProjectContext: DbContext
     {
