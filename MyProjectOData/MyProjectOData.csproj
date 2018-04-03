@@ -143,8 +143,6 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Test\DataService.cs" />
-    <Compile Include="Controllers\ClientInvoicing\ClientInvoicingClientsController.cs" />
-    <Compile Include="Controllers\ClientInvoicing\ClientInvoicingContractsController.cs" />
     <Compile Include="Controllers\Project\BlogsController.cs" />
     <Compile Include="Controllers\CVC\CvcContractsController.cs" />
     <Compile Include="Controllers\Test\MoviesController.cs" />
