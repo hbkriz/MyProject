@@ -6,10 +6,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.OData;
-using MyProjectOData.Business;
 using MyProjectOData.Models;
 
-namespace MyProjectOData.Controllers
+namespace MyProjectOData.Controllers.Fake
 {
     public class MoviesController : ODataController
     {

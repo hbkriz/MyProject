@@ -11,11 +11,11 @@ using MyProjectOData.Retrievers.ModelRetriever;
 
 namespace MyProjectOData.Controllers.CVC
 {
-    public class ContractsController : ODataController
+    public class CvcContractsController : ODataController
     {
         private readonly IContractRetriever _retriever;
 
-        public ContractsController()
+        public CvcContractsController()
         {
             _retriever = new ContractRetriever(new Repository(new UnitOfWork<CostValueCompContext>(new CostValueCompContext())));
         }
