@@ -6,9 +6,9 @@ using MyProjectOData.Models;
 
 namespace MyProjectOData.DAL
 {
-    public class CVCContext : DbContext
+    public class CostValueCompContext : DbContext
     {
-        public CVCContext() : base("CVCContext")
+        public CostValueCompContext() : base("CostValueCompContext")
         {
         }
 

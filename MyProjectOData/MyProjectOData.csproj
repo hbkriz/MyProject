@@ -148,7 +148,7 @@
     <Compile Include="Controllers\CVC\ContractsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="DAL\CVCContext.cs" />
+    <Compile Include="DAL\CostValueCompContext.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\ProjectContext.cs" />
@@ -167,7 +167,9 @@
     <Compile Include="Retrievers\BaseRetriever.cs" />
     <Compile Include="Retrievers\IRetriever.cs" />
     <Compile Include="Retrievers\ModelRetriever\BlogRetriever.cs" />
+    <Compile Include="Retrievers\ModelRetriever\ContractRetriever.cs" />
     <Compile Include="Retrievers\ModelRetriever\IBlogRetriever.cs" />
+    <Compile Include="Retrievers\ModelRetriever\IContractRetriever.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,22 +4,22 @@ using System.Data.Entity.Infrastructure;
 
 namespace MyProjectOData.DAL
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork<TDbContext> : IUnitOfWork
+        where TDbContext: DbContext
     {
-        private readonly ProjectContext _context;
-
-        public UnitOfWork(ProjectContext context)
+        protected TDbContext _dbContext;
+        public UnitOfWork(TDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
-        
+
         public IDbSet<T> Set<T>() where T : class
         {
-            return _context.Set<T>();
+            return _dbContext.Set<T>();
         }
         public DbEntityEntry DbEntityEntry<T>(T entity) where T : class
         {
-            return _context.Entry(entity);
+            return _dbContext.Entry(entity);
         }
 
         #region Dispose being used for context being called
@@ -31,7 +31,7 @@ namespace MyProjectOData.DAL
             {
                 if (disposing)
                 {
-                    _context.Dispose();
+                    _dbContext.Dispose();
                 }
             }
             _disposed = true;
@@ -43,6 +43,5 @@ namespace MyProjectOData.DAL
             GC.SuppressFinalize(this);
         }
         #endregion
-
     }
 }

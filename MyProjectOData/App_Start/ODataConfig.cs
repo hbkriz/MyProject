@@ -28,6 +28,7 @@ namespace MyProjectOData
             //movies.EntityType.Ignore(emp => emp.Director);
             
             builder.EntitySet<Blog>("Blogs");
+            builder.EntitySet<Contract>("Contracts");
 
 
             return builder.GetEdmModel();
