@@ -7,5 +7,6 @@
         public string ClientName { get; set; }
 
         public string ContactName { get; set; }
+        public virtual Contract Contract { get; set; }
     }
 }

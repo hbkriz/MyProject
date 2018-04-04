@@ -22,16 +22,16 @@ namespace MyProjectOData.Controllers.ClientInvoicing
         }
 
         [EnableQuery]
-        public IQueryable<Contract> Get()
+        public IHttpActionResult Get()
         {
-            return _retriever.GetAll(null).AsQueryable();
+            return Ok(_retriever.GetAll(null).AsQueryable());
         }
 
         [EnableQuery]
-        public SingleResult<Contract> Get(int key)
+        public IHttpActionResult Get(int key)
         {
             var result = _retriever.GetAll(p => p.ContractId == key).AsQueryable();
-            return SingleResult.Create(result);
+            return Ok(result);
         }
     }
 }

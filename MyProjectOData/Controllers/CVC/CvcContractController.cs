@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Http;
 using System.Web.OData;
+using System.Web.OData.Routing;
 using MyProjectOData.DAL;
 using MyProjectOData.DAL.Contexts;
 using MyProjectOData.Models.CVC;
@@ -16,9 +17,9 @@ namespace MyProjectOData.Controllers.CVC
         {
             _retriever = new ContractRetriever(new Repository(new UnitOfWork<CvcContext>(new CvcContext())));
         }
-
+        
         [EnableQuery]
-        public IQueryable<Contract> Get()
+        public IQueryable<Contract> GetContract()
         {
             return _retriever.GetAll(null).AsQueryable();
         }
@@ -29,6 +30,8 @@ namespace MyProjectOData.Controllers.CVC
             var result = _retriever.GetAll(p => p.ContractId == key).AsQueryable();
             return SingleResult.Create(result);
         }
+        
+
 
     }
 }

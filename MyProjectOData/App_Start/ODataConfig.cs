@@ -69,5 +69,39 @@ namespace MyProjectOData
             return builder.GetEdmModel();
         }
 
+        //READ ME
+        //$Expand
+        //    Posts($select= Title;$expand=TypeOfPosts($select= Type))
+
+        //$Select
+        //    ColumnName,...
+
+        //    $select=Name, IcaoCode
+
+        //$top, $skip
+        //1,2,...
+
+        //$filter
+        //    contains(Description,'Lorem')
+        //ContractReference eq 'M00350'
+
+        //wild card search
+        //    contains(ContractReference, 'M00')
+
+        //nested filter
+        //$expand=Trips($filter= Name eq 'Trip in US')
+
+        //nested filter with wildcard
+        //$expand=Clients($filter= contains(ContactName, 'Tes'))
+
+
+        //    $orderby
+        //    Name desc
+        //    Name asc or Name
+
+        //$count
+        //true - gives the count of the response
+
+
     }
 }
