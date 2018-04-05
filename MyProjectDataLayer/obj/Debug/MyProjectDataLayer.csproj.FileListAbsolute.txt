@@ -8,3 +8,4 @@ C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\bin\Debug\EntityFramework.S
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csproj.CoreCompileInputs.cache
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.dll
 C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.pdb
+C:\Users\BALAKH\Desktop\MyProject\MyProjectDataLayer\obj\Debug\MyProjectDataLayer.csprojResolveAssemblyReference.cache
