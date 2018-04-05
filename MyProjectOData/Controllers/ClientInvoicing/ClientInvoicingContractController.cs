@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.OData;
+using System.Web.OData.Routing;
 using MyProjectOData.DAL;
 using MyProjectOData.DAL.Contexts;
 using MyProjectOData.Models.ClientInvoicing;
@@ -28,10 +29,22 @@ namespace MyProjectOData.Controllers.ClientInvoicing
         }
 
         [EnableQuery]
-        public IHttpActionResult Get(int key)
+        public IHttpActionResult Get(string key)
         {
-            var result = _retriever.GetAll(p => p.ContractId == key).AsQueryable();
+            var result = _retriever.GetAll(p => p.ContractReference == key).AsQueryable();
             return Ok(result);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetCircles(string key)
+        {
+            return Ok(1);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetTriangles()
+        {
+            return Ok(3);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace MyProjectOData
     {
         public static void Register(HttpConfiguration config)
         {
-            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null);
 
             config.MapODataServiceRoute(
                 routeName: "OData0",
@@ -63,45 +63,77 @@ namespace MyProjectOData
 
         private static IEdmModel GetCaaiModels()
         {
-            var builder = new ODataConventionModelBuilder();
+            var builder = new ODataConventionModelBuilder
+            {
+                Namespace = "ClientService"
+            };
+
             builder.EntitySet<Models.ClientInvoicing.Client>("ClientInvoicingClient");
-            builder.EntitySet<Models.ClientInvoicing.Contract>("ClientInvoicingContract");
+            
+            var contracts = builder.EntitySet<Models.ClientInvoicing.Contract>("ClientInvoicingContract");
+
+            //Key for an Entity Model
+            var contract = contracts.EntityType;
+            contract.HasKey(p => p.ContractReference);
+
+            BuildFunctionsAndActions(builder);
+
             return builder.GetEdmModel();
         }
 
-        //READ ME
-        //$Expand
+        private static void BuildFunctionsAndActions(ODataModelBuilder builder)
+        {
+            // unbound and return the primitive type
+            builder.EntityType<Models.ClientInvoicing.Contract>().Function("GetCircles").Returns<int>();
+            builder.EntityType<Models.ClientInvoicing.Contract>().Collection.Function("GetTriangles").Returns<int>();
+
+            // unbound and return the entity
+            //builder.Function("GetCircles").ReturnsFromEntitySet<Shape>("Shapes");
+
+            //builder.EntityType<Models.ClientInvoicing.Client>()
+            //    .Action("Rate")
+            //    .Parameter<double>("Rating");
+
+            builder.EntityType<Models.ClientInvoicing.Client>().Collection
+                .Function("GetHighestRating")
+                .Returns<double>();
+
+            var function = builder.EntityType<Models.ClientInvoicing.Client>().Collection.Function("GetHighestClientRating");
+            function.Parameter<int>("Id");
+            function.Parameter<int>("Year");
+            function.Returns<double>();
+
+            var testCollectionFunction = builder.EntityType<Models.ClientInvoicing.Client>().Action("GetEvenNumbers");
+            testCollectionFunction.CollectionParameter<int>("numbers");
+            testCollectionFunction.ReturnsCollection<int>();
+        }
+
+        #region ODATA Commands on Swagger
+        //$expand
         //    Posts($select= Title;$expand=TypeOfPosts($select= Type))
 
-        //$Select
-        //    ColumnName,...
-
-        //    $select=Name, IcaoCode
+        //$select
+        //ColumnName,...
+        //ContractId, ContractReference
 
         //$top, $skip
         //1,2,...
 
         //$filter
-        //    contains(Description,'Lorem')
         //ContractReference eq 'M00350'
+        //contains(ContractReference, 'M00')
 
-        //wild card search
-        //    contains(ContractReference, 'M00')
-
-        //nested filter
+        //nested $filter
         //$expand=Trips($filter= Name eq 'Trip in US')
-
-        //nested filter with wildcard
         //$expand=Clients($filter= contains(ContactName, 'Tes'))
 
-
-        //    $orderby
-        //    Name desc
-        //    Name asc or Name
+        //$orderby
+        //Name desc
+        //Name asc or Name
 
         //$count
         //true - gives the count of the response
-
+        #endregion
 
     }
 }
