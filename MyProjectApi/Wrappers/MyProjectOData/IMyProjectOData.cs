@@ -6,7 +6,7 @@ namespace MyProjectApi.Wrappers.MyProjectOData
 {
     public interface IMyProjectOData
     {
-        Task<IEnumerable<BlogDto>> GetAllBlogs();
-        Task<BlogDto> GetBlog(string contractNumber);
+        Task<IEnumerable<ContractDto>> GetAllContracts();
+        Task<ContractDto> GetContract(string contractNumber);
     }
 }

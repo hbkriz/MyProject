@@ -28,15 +28,15 @@ namespace MyProjectApi.Controllers
 
 
         [Route("GetAll")]
-        public async Task<IEnumerable<BlogDto>> GetAll()
+        public async Task<IEnumerable<ContractDto>> GetAll()
         {
-            return await _projectOData.GetAllBlogs();
+            return await _projectOData.GetAllContracts();
         }
 
         [Route("Get")]
-        public async Task<BlogDto> Get(string contractNumber)
+        public async Task<ContractDto> Get(string contractNumber)
         {
-            return await _projectOData.GetBlog(contractNumber);
+            return await _projectOData.GetContract(contractNumber);
         }
 
     }
