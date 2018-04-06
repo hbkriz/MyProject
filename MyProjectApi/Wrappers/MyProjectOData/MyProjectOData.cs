@@ -18,13 +18,13 @@ namespace MyProjectApi.Wrappers.MyProjectOData
         public Task<IEnumerable<ContractDto>> GetAllContracts()
         {
             var odataMethod = string.Format("CAAI/ClientInvoicingContract");
-            return _httpClientWrapper.GetAsync<IEnumerable<ContractDto>>(odataMethod);
+            return _httpClientWrapper.GetODataAsync<IEnumerable<ContractDto>>(odataMethod);
         }
 
         public Task<ContractDto> GetContract(string contractNumber)
         {
             var odataMethod = string.Format("CAAI/ClientInvoicingContract('{0}')", contractNumber);
-            return _httpClientWrapper.GetAsync<ContractDto>(odataMethod);
+            return _httpClientWrapper.GetODataAsync<ContractDto>(odataMethod);
         }
 
     }
