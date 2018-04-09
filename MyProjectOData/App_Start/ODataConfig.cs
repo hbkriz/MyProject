@@ -107,33 +107,5 @@ namespace MyProjectOData
             testCollectionFunction.CollectionParameter<int>("numbers");
             testCollectionFunction.ReturnsCollection<int>();
         }
-
-        #region ODATA Commands on Swagger
-        //$expand
-        //    Posts($select= Title;$expand=TypeOfPosts($select= Type))
-
-        //$select
-        //ColumnName,...
-        //ContractId, ContractReference
-
-        //$top, $skip
-        //1,2,...
-
-        //$filter
-        //ContractReference eq 'M00350'
-        //contains(ContractReference, 'M00')
-
-        //nested $filter
-        //$expand=Trips($filter= Name eq 'Trip in US')
-        //$expand=Clients($filter= contains(ContactName, 'Tes'))
-
-        //$orderby
-        //Name desc
-        //Name asc or Name
-
-        //$count
-        //true - gives the count of the response
-        #endregion
-
     }
 }
