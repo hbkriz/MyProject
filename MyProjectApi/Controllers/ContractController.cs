@@ -27,16 +27,16 @@ namespace MyProjectApi.Controllers
         }
 
 
-        [Route("GetAll")]
+        [Route("GetAllContracts")]
         public async Task<IEnumerable<ContractDto>> GetAll()
         {
             return await _projectOData.GetAllContracts();
         }
 
-        [Route("GetFiltered")]
-        public async Task<ContractDto> Get(string contractNumber)
+        [Route("GetFilteredContractWithClients")]
+        public async Task<ContractWithClientDto> Get(string contractNumber)
         {
-            return (await _projectOData.GetFilteredContract(contractNumber)).First();
+            return (await _projectOData.GetFilteredContractWithClients(contractNumber)).First();
         }
 
     }

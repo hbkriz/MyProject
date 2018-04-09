@@ -29,7 +29,9 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(JsonHeader));
             _apiName = apiName;
         }
-        
+
+        #region Web API Specific
+
         public async Task<T> GetAsync<T>(string apiMethod)
         {
             return await ReadResponse<T>(HandleRequest(() => _httpClient.GetAsync(apiMethod)));
@@ -44,12 +46,13 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
         {
             return await ReadResponse<T>(HandleRequest(() => _httpClient.PutAsJsonAsync(apiMethod, value)));
         }
-
-
+        
         public async Task<T> PostAsJsonAsync<T>(string apiMethod, object value)
         {
             return await ReadResponse<T>(HandleRequest(() => _httpClient.PostAsJsonAsync(apiMethod, value)));
         }
+
+        #endregion
 
         private async Task<HttpResponseMessage> HandleRequest(Func<Task<HttpResponseMessage>> apiMethod)
         {

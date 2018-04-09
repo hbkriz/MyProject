@@ -7,6 +7,6 @@ namespace MyProjectApi.Wrappers.MyProjectOData
     public interface IMyProjectOData
     {
         Task<IEnumerable<ContractDto>> GetAllContracts();
-        Task<IEnumerable<ContractDto>> GetFilteredContract(string contractNumber);
+        Task<IEnumerable<ContractWithClientDto>> GetFilteredContractWithClients(string contractNumber);
     }
 }
