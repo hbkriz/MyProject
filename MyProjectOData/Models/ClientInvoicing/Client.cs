@@ -1,4 +1,6 @@
-﻿namespace MyProjectOData.Models.ClientInvoicing
+﻿using System.Collections.Generic;
+
+namespace MyProjectOData.Models.ClientInvoicing
 {
     public class Client
     {
@@ -8,5 +10,6 @@
 
         public string ContactName { get; set; }
         public virtual Contract Contract { get; set; }
+        public virtual List<Receivable> Receivables { get; set; }
     }
 }

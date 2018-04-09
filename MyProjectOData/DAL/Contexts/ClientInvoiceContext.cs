@@ -18,5 +18,7 @@ namespace MyProjectOData.DAL.Contexts
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Contract> Contracts { get; set; }
+        public DbSet<Receivable> Receivables { get; set; }
+        public DbSet<Retention> Retentions { get; set; }
     }
 }

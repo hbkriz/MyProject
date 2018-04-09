@@ -162,6 +162,8 @@
     </Compile>
     <Compile Include="Models\ClientInvoicing\Client.cs" />
     <Compile Include="Models\ClientInvoicing\Contract.cs" />
+    <Compile Include="Models\ClientInvoicing\Receivable.cs" />
+    <Compile Include="Models\ClientInvoicing\Retention.cs" />
     <Compile Include="Models\CVC\Contract.cs" />
     <Compile Include="Models\CVC\StaticInfo.cs" />
     <Compile Include="Models\Test\Movie.cs" />

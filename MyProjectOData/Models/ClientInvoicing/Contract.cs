@@ -6,6 +6,7 @@ namespace MyProjectOData.Models.ClientInvoicing
     {
         public int ContractId { get; set; }
         public string ContractReference { get; set; }
+        public string CostCentre { get; set; }
         public virtual List<Client> Clients { get; set; }
     }
 }

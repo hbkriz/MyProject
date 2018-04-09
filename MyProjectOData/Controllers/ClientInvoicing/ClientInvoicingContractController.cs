@@ -22,7 +22,7 @@ namespace MyProjectOData.Controllers.ClientInvoicing
             _retriever = new ContractRetriever(new Repository(new UnitOfWork<ClientInvoiceContext>(new ClientInvoiceContext())));
         }
 
-        [EnableQuery]
+        [EnableQuery(MaxExpansionDepth = 3)]
         public IHttpActionResult Get()
         {
             return Ok(_retriever.GetAll(null).AsQueryable());
