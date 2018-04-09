@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using MyProjectOData.DAL;
 
@@ -13,13 +14,8 @@ namespace MyProjectOData.Retrievers
         {
             Repository = repository;
         }
-
-        public virtual TModel Get(Expression<Func<TModel, bool>> match)
-        {
-            return Repository.Get(match);
-        }
-
-        public virtual IEnumerable<TModel> GetAll(Expression<Func<TModel, bool>> match)
+        
+        public virtual IQueryable<TModel> GetAll(Expression<Func<TModel, bool>> match)
         {
             return Repository.GetAll(match);
         }

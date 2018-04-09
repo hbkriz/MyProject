@@ -21,13 +21,13 @@ namespace MyProjectOData.Controllers.CVC
         [EnableQuery]
         public IQueryable<Contract> Get()
         {
-            return _retriever.GetAll(null).AsQueryable();
+            return _retriever.GetAll(null);
         }
 
         [EnableQuery]
         public SingleResult<Contract> Get(int key)
         {
-            var result = _retriever.GetAll(p => p.ContractId == key).AsQueryable();
+            var result = _retriever.GetAll(p => p.ContractId == key);
             return SingleResult.Create(result);
         }
         

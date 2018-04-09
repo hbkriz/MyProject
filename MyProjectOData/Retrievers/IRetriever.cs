@@ -7,7 +7,6 @@ namespace MyProjectOData.Retrievers
 {
     public interface IRetriever<TModel>
     {
-        TModel Get(Expression<Func<TModel, bool>> match);
-        IEnumerable<TModel> GetAll(Expression<Func<TModel, bool>> match);
+        IQueryable<TModel> GetAll(Expression<Func<TModel, bool>> match);
     }
 }

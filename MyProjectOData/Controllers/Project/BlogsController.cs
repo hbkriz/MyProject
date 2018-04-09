@@ -25,14 +25,14 @@ namespace MyProjectOData.Controllers.Project
         [EnableQuery]
         public IQueryable<Blog> Get()
         {
-            return _retriever.GetAll(null).AsQueryable();
+            return _retriever.GetAll(null);
         }
         
 
         [EnableQuery]
         public SingleResult<Blog> Get([FromODataUri] int key)
         {
-            var result = _retriever.GetAll(p => p.BlogId == key).AsQueryable();
+            var result = _retriever.GetAll(p => p.BlogId == key);
             return SingleResult.Create(result);
         }
     }

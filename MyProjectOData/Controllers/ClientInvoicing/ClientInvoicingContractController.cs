@@ -25,13 +25,13 @@ namespace MyProjectOData.Controllers.ClientInvoicing
         [EnableQuery(MaxExpansionDepth = 3)]
         public IHttpActionResult Get()
         {
-            return Ok(_retriever.GetAll(null).AsQueryable());
+            return Ok(_retriever.GetAll(null));
         }
 
         [EnableQuery]
         public IHttpActionResult Get(string key)
         {
-            var result = _retriever.GetAll(p => p.ContractReference == key).AsQueryable();
+            var result = _retriever.GetAll(p => p.ContractReference == key);
             return Ok(result);
         }
 

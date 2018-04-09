@@ -24,13 +24,13 @@ namespace MyProjectOData.Controllers.CVC
         [EnableQuery]
         public IQueryable<StaticInfo> Get()
         {
-            return _staticInfoRetriever.GetAll(null).AsQueryable();
+            return _staticInfoRetriever.GetAll(null);
         }
 
         [EnableQuery]
         public SingleResult<StaticInfo> Get(int key)
         {
-            var result = _staticInfoRetriever.GetAll(p => p.ContractId == key).AsQueryable();
+            var result = _staticInfoRetriever.GetAll(p => p.ContractId == key);
             return SingleResult.Create(result);
         }
     }
