@@ -19,7 +19,7 @@ namespace MyProjectOData.Controllers.CVC
         }
         
         [EnableQuery]
-        public IQueryable<Contract> GetContract()
+        public IQueryable<Contract> Get()
         {
             return _retriever.GetAll(null).AsQueryable();
         }
