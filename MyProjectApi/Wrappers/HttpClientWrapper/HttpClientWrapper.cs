@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using Newtonsoft.Json;
 
 namespace MyProjectApi.Wrappers.HttpClientWrapper
@@ -77,12 +73,7 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
         {
             return await ReadODataResponse<T>(HandleRequest(() => _httpClient.GetAsync(apiMethod)));
         }
-
-        public async Task<IEnumerable<T>> GetAllAsync<T>(string apiMethod)
-        {
-            return await ReadResponse<IEnumerable<T>>(HandleRequest(() => _httpClient.GetAsync(apiMethod)));
-        }
-
+        
         private async Task<T> ReadODataResponse<T>(Task<HttpResponseMessage> responseAsync)
         {
             var response = await responseAsync;
@@ -91,13 +82,11 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
             {
                 var json = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<ODataResponse<T>>(json);
-                var results = result.Value;
-
-                return await response.Content.ReadAsAsync<T>();
+                return result.Value;
             }
             throw new InvalidOperationException($"OData Server ({_apiName}) returned HTTP error Uri : {response.RequestMessage.RequestUri} | {(int)response.StatusCode} : {response.ReasonPhrase}. ");
         }
-
+        
         #endregion
     }
 
@@ -108,4 +97,5 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
         [JsonProperty("value")]
         public T Value { get; set; }
     }
+    
 }

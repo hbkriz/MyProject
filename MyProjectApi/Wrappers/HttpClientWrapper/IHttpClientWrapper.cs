@@ -14,6 +14,5 @@ namespace MyProjectApi.Wrappers.HttpClientWrapper
         Task<T> PutAsJsonAsync<T>(string apiMethod, object value);
         
         Task<T> GetODataAsync<T>(string apiMethod);
-
     }
 }

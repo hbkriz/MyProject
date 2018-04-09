@@ -33,10 +33,10 @@ namespace MyProjectApi.Controllers
             return await _projectOData.GetAllContracts();
         }
 
-        [Route("Get")]
+        [Route("GetFiltered")]
         public async Task<ContractDto> Get(string contractNumber)
         {
-            return await _projectOData.GetContract(contractNumber);
+            return (await _projectOData.GetFilteredContract(contractNumber)).First();
         }
 
     }
