@@ -18,7 +18,7 @@ namespace MyProjectOData.Controllers.CVC
 
         public CvcStaticInfoController()
         {
-            _staticInfoRetriever = new StaticInfoRetriever(new Repository(new UnitOfWork<CvcContext>(new CvcContext())));
+            _staticInfoRetriever = new StaticInfoRetriever(new Repository(new BaseContext<CvcContext>(new CvcContext())));
         }
 
         [EnableQuery]

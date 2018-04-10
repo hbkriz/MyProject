@@ -154,10 +154,10 @@
     <Compile Include="DAL\Contexts\ClientInvoiceContext.cs" />
     <Compile Include="DAL\Contexts\CvcContext.cs" />
     <Compile Include="DAL\IRepository.cs" />
-    <Compile Include="DAL\IUnitOfWork.cs" />
+    <Compile Include="DAL\IBaseContext.cs" />
     <Compile Include="DAL\Contexts\ProjectContext.cs" />
     <Compile Include="DAL\Repository.cs" />
-    <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="DAL\BaseContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

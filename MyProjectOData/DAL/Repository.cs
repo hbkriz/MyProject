@@ -8,26 +8,16 @@ namespace MyProjectOData.DAL
 {
     public class Repository : IRepository
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IBaseContext _context;
 
-        public Repository(IUnitOfWork unitOfWork)
+        public Repository(IBaseContext context)
         {
-            _unitOfWork = unitOfWork;
-        }
-        
-        public T Get<T>(Expression<Func<T, bool>> match) where T : class
-        {
-            return _unitOfWork.Set<T>().SingleOrDefault(match);
-        }
-
-        public T Find<T>(params object[] keyValues) where T : class
-        {
-            return _unitOfWork.Set<T>().Find(keyValues);
+            _context = context;
         }
 
         public IQueryable<T> GetAll<T>(Expression<Func<T, bool>> condition = null) where T : class
         {
-            return condition != null ? _unitOfWork.Set<T>().Where(condition) : _unitOfWork.Set<T>();
+            return condition != null ? _context.Set<T>().Where(condition) : _context.Set<T>();
         }
     }
 }

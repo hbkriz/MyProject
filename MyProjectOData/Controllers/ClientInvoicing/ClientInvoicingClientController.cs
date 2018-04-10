@@ -19,7 +19,7 @@ namespace MyProjectOData.Controllers.ClientInvoicing
 
         public ClientInvoicingClientController()
         {
-            _retriever = new ClientRetriever(new Repository(new UnitOfWork<ClientInvoiceContext>(new ClientInvoiceContext())));
+            _retriever = new ClientRetriever(new Repository(new BaseContext<ClientInvoiceContext>(new ClientInvoiceContext())));
         }
 
         [EnableQuery]

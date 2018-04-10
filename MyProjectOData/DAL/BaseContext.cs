@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 
 namespace MyProjectOData.DAL
 {
-    public class UnitOfWork<TDbContext> : IUnitOfWork
+    public class BaseContext<TDbContext> : IBaseContext
         where TDbContext: DbContext
     {
-        protected TDbContext _dbContext;
-        public UnitOfWork(TDbContext dbContext)
+        private readonly TDbContext _dbContext;
+        public BaseContext(TDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -17,12 +16,8 @@ namespace MyProjectOData.DAL
         {
             return _dbContext.Set<T>();
         }
-        public DbEntityEntry DbEntityEntry<T>(T entity) where T : class
-        {
-            return _dbContext.Entry(entity);
-        }
 
-        #region Dispose being used for context being called
+        #region Dispose used for Context
         private bool _disposed;
 
         protected void Dispose(bool disposing)

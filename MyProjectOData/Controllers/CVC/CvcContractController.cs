@@ -15,7 +15,7 @@ namespace MyProjectOData.Controllers.CVC
 
         public CvcContractController()
         {
-            _retriever = new ContractRetriever(new Repository(new UnitOfWork<CvcContext>(new CvcContext())));
+            _retriever = new ContractRetriever(new Repository(new BaseContext<CvcContext>(new CvcContext())));
         }
         
         [EnableQuery]

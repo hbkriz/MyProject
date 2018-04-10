@@ -19,7 +19,7 @@ namespace MyProjectOData.Controllers.Project
 
         public BlogsController()
         {
-            _retriever = new BlogRetriever(new Repository(new UnitOfWork<ProjectContext>(new ProjectContext())));
+            _retriever = new BlogRetriever(new Repository(new BaseContext<ProjectContext>(new ProjectContext())));
         }
         
         [EnableQuery]
