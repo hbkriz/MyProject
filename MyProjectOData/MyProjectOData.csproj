@@ -146,7 +146,7 @@
     <Compile Include="Controllers\ClientInvoicing\ClientInvoicingClientController.cs" />
     <Compile Include="Controllers\ClientInvoicing\ClientInvoicingContractController.cs" />
     <Compile Include="Controllers\CVC\CvcStaticInfoController.cs" />
-    <Compile Include="Controllers\Test\DataService.cs" />
+    <Compile Include="Retrievers\Test\TestDataService.cs" />
     <Compile Include="Controllers\Project\BlogsController.cs" />
     <Compile Include="Controllers\CVC\CvcContractController.cs" />
     <Compile Include="Controllers\Test\MoviesController.cs" />

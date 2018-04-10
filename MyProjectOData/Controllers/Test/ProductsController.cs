@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
 using System.Web.OData;
-using MyProjectOData.Models;
 using MyProjectOData.Models.Test;
+using MyProjectOData.Retrievers.Test;
 
 namespace MyProjectOData.Controllers.Test
 {
     public class ProductsController : ODataController
     {
-        private readonly DataService _service = new DataService();
+        private readonly TestDataService _service = new TestDataService();
 
         [EnableQuery]
         public IQueryable<Product> Get()

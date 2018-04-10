@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using MyProjectOData.Models;
 using MyProjectOData.Models.Test;
 
-namespace MyProjectOData.Controllers.Test
+namespace MyProjectOData.Retrievers.Test
 {
-    public class DataService
+    public class TestDataService
     {
         public IQueryable<Movie> Movies
         {
